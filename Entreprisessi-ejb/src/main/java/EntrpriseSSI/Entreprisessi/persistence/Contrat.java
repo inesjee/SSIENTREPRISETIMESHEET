@@ -3,16 +3,29 @@ package EntrpriseSSI.Entreprisessi.persistence;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+
+@Entity
 public class Contrat implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -6290331384709187957L;
+	
+	@Id
+	@GeneratedValue
 	private int reference;
 	private Date dateDebut;
 	private String typeContrat;
 	private float salaire;
+	
+	@OneToOne
+	private Employe employe;
 	
 	public Contrat() {
 		super();
@@ -47,6 +60,12 @@ public class Contrat implements Serializable{
 	}
 	public void setSalaire(float salaire) {
 		this.salaire = salaire;
+	}
+	public Employe getEmploye() {
+		return employe;
+	}
+	public void setEmploye(Employe employe) {
+		this.employe = employe;
 	}
 	
 	

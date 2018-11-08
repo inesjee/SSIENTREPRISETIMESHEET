@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 
 
@@ -28,6 +30,12 @@ public class Employe implements Serializable{
 	private boolean isActif;
 	@Enumerated
 	private Role role;
+	
+	@OneToOne
+	private Contrat contrat;
+	
+	@ManyToMany
+	private List<Departement> departements;
 	
 	@OneToMany
 	private List <Timesheet> timesheets;
@@ -92,6 +100,30 @@ public class Employe implements Serializable{
 
 	public void setRole(Role role) {
 		this.role = role;
+	}
+
+	public Contrat getContrat() {
+		return contrat;
+	}
+
+	public void setContrat(Contrat contrat) {
+		this.contrat = contrat;
+	}
+
+	public List<Departement> getDepartements() {
+		return departements;
+	}
+
+	public void setDepartements(List<Departement> departements) {
+		this.departements = departements;
+	}
+
+	public List<Timesheet> getTimesheets() {
+		return timesheets;
+	}
+
+	public void setTimesheets(List<Timesheet> timesheets) {
+		this.timesheets = timesheets;
 	}
 
 	

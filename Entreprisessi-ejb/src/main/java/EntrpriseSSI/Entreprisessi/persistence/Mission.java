@@ -54,6 +54,12 @@ public class Mission implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public List<Timesheet> getTimesheets() {
+		return timesheets;
+	}
+	public void setTimesheets(List<Timesheet> timesheets) {
+		this.timesheets = timesheets;
+	}
 	
 	
 
