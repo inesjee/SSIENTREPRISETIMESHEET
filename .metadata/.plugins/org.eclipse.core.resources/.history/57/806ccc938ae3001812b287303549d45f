@@ -1,0 +1,36 @@
+package EntrpriseSSI.Entreprisessi.services;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import EntrpriseSSI.Entreprisessi.persistence.Departement;
+import EntrpriseSSI.Entreprisessi.persistence.Entreprise;
+
+@Stateless
+public class EntrepriseService implements EntrepriseServiceRemote{
+
+	@PersistenceContext
+	EntityManager em;
+	
+	@Override
+	public int ajouterEntreprise(Entreprise entreprise) {
+		em.persist(entreprise);
+		return entreprise.getId();
+	}
+
+	@Override
+	public int ajouterDepartement(Departement dep) {
+		// TODO Auto-generated method stub
+		em.persist(dep);
+		return dep.getId();
+	}
+
+	@Override
+	public void affecterDepartementAEntreprise(int depId, int entrepriseId) {
+		// TODO Auto-generated method stub
+		
+	}
+  
+	
+}
