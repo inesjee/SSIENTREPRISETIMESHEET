@@ -1,0 +1,23 @@
+package EntrpriseSSI.Entreprisessi.services;
+
+import javax.ws.rs.Produces; 
+import javax.websocket.server.PathParam;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Application;
+import javax.ws.rs.core.MediaType;
+
+import EntrpriseSSI.Entreprisessi.persistence.Entreprise;
+
+
+@Path("/zzz")
+public class HelloResource {
+	
+	@GET
+	@Produces("Application/json")
+	public Entreprise SayHello(@PathParam("value=FirstName")String prenom, @PathParam("Value=LastName")String nom)
+	{
+		return new Entreprise();
+	}
+
+}

@@ -2,10 +2,12 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="EntrepriseClient"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="EntrepriseSSIClient"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -18,6 +20,30 @@
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.EditDependencyDialog">
+		<item value="480" key="width"/>
+		<item value="443" key="x"/>
+		<item value="64" key="y"/>
+		<item value="450" key="height"/>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="480" key="width"/>
+		<item value="443" key="x"/>
+		<item value="10" key="y"/>
+		<item value="531" key="height"/>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
 		<item value="http://git.esprit.tn:8081/nexus/service/local/repositories/releases/content/archetype-catalog.xml" key="catalog"/>
@@ -37,6 +63,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\fivep\workspace\JavaEE-Entreprise\JavaEE-Entreprise\Entreprisessi-ejb\src\main\java\EntrpriseSSI\Entreprisessi\persistence\Employe.java"/>
 			<item value="C:\Users\fivep\workspace"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -50,13 +77,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="test.test"/>
 		</list>
 		<list key="groupId">
-			<item value="test"/>
 		</list>
 		<list key="artifactId">
-			<item value="test"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

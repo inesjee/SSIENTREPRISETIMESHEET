@@ -1,0 +1,45 @@
+package EntrpriseSSI.Entreprisessi.services;
+
+import javax.ejb.Remote;
+import javax.jws.WebParam;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.MediaType;
+
+import EntrpriseSSI.Entreprisessi.persistence.Departement;
+import EntrpriseSSI.Entreprisessi.persistence.Entreprise;
+
+@Remote
+@Path("/Entreprise")
+public interface EntrepriseServiceRemote {
+	
+	@POST
+	@Path("ajoutentreprise")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public String ajouterEntreprise(@WebParam(name="entreprise")Entreprise entreprise);
+
+	
+	@Path("/ajoutedepartement")
+	@POST
+	@Consumes({MediaType.APPLICATION_JSON})
+	public String ajouterDepartement(@WebParam(name="dep")Departement dep);
+
+	@Path("/Affecterdepaentreprise/{idDep}/{idEnt}")
+	@PUT
+	void affecterDepartementAEntreprise(@WebParam(name="idDep")int depId,@WebParam(name="idEnt")int entrepriseId);
+	
+	
+	
+	/*
+	@PUT
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	void affecterDepartementAEntreprise(int depId, int entrepriseId);
+	
+	@DELETE
+	@Path("/{delentreprise}")
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	public void deleteEntrepriseById(@PathParam("delentreprise")int entrepriseId);
+*/
+}

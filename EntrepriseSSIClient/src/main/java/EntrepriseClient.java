@@ -16,18 +16,23 @@ public class EntrepriseClient {
 		EntrepriseServiceRemote entrepriseServiceRemote = (EntrepriseServiceRemote)context.lookup(jndiName);
 
 	
-		Entreprise ssiconsulting = new Entreprise("consulting", "La Marsa");
-		int ssiconsultingId = entrepriseServiceRemote.ajouterEntreprise(ssiconsulting);
+		//Entreprise ssiconsulting = new Entreprise("consulting", "La Marsa");
+		//String ssiconsultingId = entrepriseServiceRemote.ajouterEntreprise(ssiconsulting);
 		
-		
+
 		Departement depRH = new Departement("RH");
 		Departement depTelecom = new Departement ("Telecom");
 
-		int depTeleconId = entrepriseServiceRemote.ajouterDepartement(depTelecom);
+		/*int depTeleconId = entrepriseServiceRemote.ajouterDepartement(depTelecom);
 		int depRhId = entrepriseServiceRemote.ajouterDepartement(depRH);
-		
+		/*
 		entrepriseServiceRemote.affecterDepartementAEntreprise(depTeleconId,ssiconsultingId);
 		entrepriseServiceRemote.affecterDepartementAEntreprise(depRhId, ssiconsultingId);
+		
+		
+		int ssiiConsultingId=1;
+		entrepriseServiceRemote.deleteEntrepriseById(ssiiConsultingId);
+		*/
 	}
 
 }

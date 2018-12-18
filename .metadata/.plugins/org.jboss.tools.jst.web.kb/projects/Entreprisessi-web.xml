@@ -5,8 +5,15 @@
  </depends-on-projects>
  <used-by-projects/>
  <paths>
-  <path value="C:/Users/fivep/.m2/repository/javax/javaee-api/7.0/javaee-api-7.0.jar"/>
   <path value="C:/Users/fivep/.m2/repository/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar"/>
+  <path value="C:/Users/fivep/.m2/repository/org/jboss/logging/jboss-logging/3.1.4.GA/jboss-logging-3.1.4.GA.jar"/>
+  <path value="C:/Users/fivep/.m2/repository/com/sun/istack/istack-commons-runtime/2.16/istack-commons-runtime-2.16.jar"/>
+  <path value="C:/Users/fivep/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar"/>
+  <path value="C:/Users/fivep/.m2/repository/com/sun/xml/bind/jaxb-core/2.2.7/jaxb-core-2.2.7.jar"/>
+  <path value="C:/Users/fivep/.m2/repository/javax/xml/bind/jsr173_api/1.0/jsr173_api-1.0.jar"/>
+  <path value="C:/Users/fivep/.m2/repository/javax/javaee-api/7.0/javaee-api-7.0.jar"/>
+  <path value="C:/Users/fivep/.m2/repository/javax/xml/bind/jaxb-api/2.2.7/jaxb-api-2.2.7.jar"/>
+  <path value="C:/Users/fivep/.m2/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.12/FastInfoset-1.2.12.jar"/>
   <path value="/Entreprisessi-web/src/main/webapp/WEB-INF/faces-config.xml">
    <libraries>
     <library class="faces-config">
@@ -15,7 +22,7 @@
     </library>
    </libraries>
   </path>
-  <path value="C:/Users/fivep/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar"/>
+  <path value="C:/Users/fivep/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.7/jaxb-impl-2.2.7.jar"/>
   <path value="C:/Users/fivep/.m2/repository/org/primefaces/primefaces/5.3/primefaces-5.3.jar">
    <libraries>
     <library class="faces-config">
@@ -32,6 +39,7 @@
     </library>
    </libraries>
   </path>
+  <path value="C:/Users/fivep/.m2/repository/org/jboss/resteasy/resteasy-jaxb-provider/3.0.16.Final/resteasy-jaxb-provider-3.0.16.Final.jar"/>
  </paths>
  <validation>
   <core validator-id="jsf-verification"/>
