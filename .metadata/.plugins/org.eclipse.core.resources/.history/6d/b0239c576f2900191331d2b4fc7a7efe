@@ -1,0 +1,67 @@
+package EntrpriseSSI.Entreprisessi.services;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import EntrpriseSSI.Entreprisessi.persistence.Departement;
+import EntrpriseSSI.Entreprisessi.persistence.Entreprise;
+
+@Stateless
+public class EntrepriseService implements EntrepriseServiceRemote{
+
+	@PersistenceContext
+	EntityManager em;
+		
+	public String ajouterEntreprise(Entreprise entreprise) {
+		em.persist(entreprise);
+		return Integer.toString(entreprise.getId());
+	}
+
+	@Override
+	public String ajouterDepartement(Departement dep) {
+		// TODO Auto-generated method stub
+		em.persist(dep);
+		return Integer.toString(dep.getId());
+		
+	}
+
+	
+
+	@Override
+	public void affecterDepartementAEntreprise(int depId, int entrepriseId) {
+		// TODO Auto-generated method stub
+		Entreprise entrepriseManagedEntity=em.find(Entreprise.class, entrepriseId);
+		Departement depManagedEntity = em.find(Departement.class, depId);
+
+		depManagedEntity.setEntreprise(entrepriseManagedEntity);
+	}
+
+	@Override
+		public void deleteEntrepriseById(int entrepriseId){
+			em.remove(em.find(Entreprise.class, entrepriseId));
+			}
+
+	@Override
+	public List<Entreprise> getAll() {
+		
+		
+		return em.createQuery("from Entreprise", Entreprise.class).getResultList();
+		
+	
+	}
+
+	@Override
+	public void updateEntreprise(int entrepriseId, Entreprise entreprise) {
+		Entreprise en = new Entreprise();
+	    en.setName(entreprise.getName());
+	    en.setId(entrepriseId);
+	    en.setRaisonSocial(entreprise.getRaisonSocial());
+	    
+	    em.merge(en);
+	}
+	
+	
+	
+}

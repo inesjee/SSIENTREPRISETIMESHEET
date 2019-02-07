@@ -1,0 +1,54 @@
+package EntrpriseSSI.Entreprisessi.services;
+
+import java.util.List;
+
+import javax.ejb.Remote;
+import javax.jws.WebParam;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+import EntrpriseSSI.Entreprisessi.persistence.Departement;
+import EntrpriseSSI.Entreprisessi.persistence.Entreprise;
+
+@Remote
+@Path("/Entreprise")
+public interface EntrepriseServiceRemote {
+	
+	@GET
+	@Path("/getall")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Entreprise> getAll();
+	
+	@POST
+	@Path("/ajoutentreprise")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public String ajouterEntreprise(@WebParam(name="entreprise")Entreprise entreprise);
+
+	
+	@Path("/ajoutedepartement")
+	@POST
+	@Consumes({MediaType.APPLICATION_JSON})
+	public String ajouterDepartement(@WebParam(name="dep")Departement dep);
+
+	@Path("/Affecterdepaentreprise/{idDep}/{idEnt}")
+	@PUT
+	void affecterDepartementAEntreprise(@PathParam(value="idDep")int depId,@PathParam(value="idEnt")int entrepriseId);
+	
+	@DELETE
+	@Path("/delentreprise/{idEnt}")
+	public void deleteEntrepriseById(@PathParam("idEnt")int entrepriseId);	
+	
+	  @PUT
+	  @Produces({MediaType.APPLICATION_JSON})
+	  @Path("/updateentreprise/{idEnt}")
+	    public void updateEntreprise(@PathParam("idEnt") int entrepriseId);
+	
+}
